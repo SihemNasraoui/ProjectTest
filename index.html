@@ -1,59 +1,44 @@
-<div id="register" fxLayout="column">
-
-    <div id="register-form-wrapper" fxLayout="column" fxLayoutAlign="center center">
-
-        <div id="register-form" [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}">
-
-            <div class="logo">
-                <img src="assets/images/logos/fuse.svg">
+<div class="container">
+    <div class="signup-content">
+        <form method="POST" id="signup-form" class="signup-form">
+            <h2 class="form-title">Create account</h2>
+            <div class="form-group">
+                <input  type="text" class="form-input" name="name" id="name" placeholder="Your Name" />
             </div>
-
-            <div class="title">CREATE AN ACCOUNT</div>
-
-            <form name="registerForm" [formGroup]="registerForm" novalidate>
-
-                <mat-form-field>
-                    <input matInput placeholder="Name" id="name10" formControlName="name">
-                    <mat-error *ngIf="registerFormErrors.name.required">
-                        Name is required
-                    </mat-error>
-                </mat-form-field>
-
-                <mat-form-field>
-                    <input matInput placeholder="Email" id="email10" formControlName="email">
-                    <mat-error *ngIf="registerFormErrors.email.required">
-                        Email is required
-                    </mat-error>
-                    <mat-error *ngIf="!registerFormErrors.email.required && registerFormErrors.email.email">
-                        Please enter a valid email address
-                    </mat-error>
-                </mat-form-field>
-
-                
-                    <input matInput type="password" placeholder="Password" id="password" formControlName="password">
-              
-
-                    <input matInput type="password" placeholder="Password (Confirm)" id="passwordConfirm" formControlName="passwordConfirm">
-               
-
-                <div class="terms" fxLayout="row" fxLayoutAlign="center center">
-                   <<ion-checkbox>                         <span>I read and accept</span>
-                   </ion-checkbox>
-                    <a href="#">terms and conditions</a>
-                </div>
-
-               
-                <a [routerLink]="'/pages/auth/login'"><button mat-raised-button id="btnRegister" color="accent" class="submit-button" aria-label="CREATE AN ACCOUNT" >  CREATE AN ACCOUNT </button></a>
-
-            </form>
-
-            <div class="register" fxLayout="column" fxLayoutAlign="center center">
-                <span class="text">Already have an account?</span>
-                <a class="link" [routerLink]="'/pages/auth/login'">Login</a>
+            <div class="form-group">
+                <input type="email" class="form-input" name="email" id="email" placeholder="Your Email" />
             </div>
+          
+            <div class="form-group">
+                <input  type="text" class="form-input" name="password" id="password" placeholder="Password" />
+                <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-input" name="re_password" id="re_password" placeholder="Repeat your password" />
+            </div>
+    
+            <div class="form-group">
+                <input type="checkbox" name="agree-term" id="agree-term" value="agree-term" class="agree-term" />
+                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+            </div>
+            <div class="form-group">
+                <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
+            </div>
+           
+        </form>
+      
 
-        </div>
-
+        <p class="loginhere">
+            Have already an account ? <a href="#" class="loginhere-link" >Login here</a>
+        </p>
     </div>
+</div>
+</section>
 
 </div>
+
+<!-- JS -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
